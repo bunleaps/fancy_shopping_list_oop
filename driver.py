@@ -26,22 +26,33 @@ def food_data_BS():
 def display_content_BS(data):
     print("\nHere's a summary of the items purchased:")
     print("-------------------------------")
-    total = 0
+
     for i in data:
         for a, b in i.items():
             item = FancyShoppingListBS(a, b)
             price = item.CalculateCostBS()
-            total += price
             print(f"Item: {a}")
             print(f"Amount ordered: {b} pounds")
             print(f"Price per pound: ${item.getPricePerPoundBS():.2f}")
             print(f"Price of order: ${price:.2f} \n")
 
+
+def total_cost_BS(data):
+    total = 0
+
+    for i in data:
+        for a, b in i.items():
+            item = FancyShoppingListBS(a, b)
+            price = item.CalculateCostBS()
+            total += price
+
     print(f"Total cost: ${total:.2f}")
 
 
 def main():
-    display_content_BS(food_data_BS())
+    food_list = food_data_BS()
+    display_content_BS(food_list)
+    total_cost_BS(food_list)
 
 
 main()

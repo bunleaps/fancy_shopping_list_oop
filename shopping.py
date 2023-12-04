@@ -5,6 +5,7 @@ class FancyShoppingListBS:
         self.__food_amount = amount
         self.__standard_price = 0.00
         self.__total_price = 0
+        self.__PriceListBS()
 
     # Check the food name and set the standard price
     # which is the price per pound
@@ -35,6 +36,5 @@ class FancyShoppingListBS:
     # Calculate the cost of an item by
     # Food Amount * Price per Pound
     def CalculateCostBS(self):
-        self.__PriceListBS()
         self.__total_price = self.__food_amount * self.__standard_price
         return self.__total_price
